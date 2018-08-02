@@ -25,7 +25,7 @@ SECRET_KEY = 'xxbqcqt_s1pax7#0$b2o7j4&$x6q@kas1#y!=y&hf-jqnpm+-3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', 'cryptic-anchorage-24424.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'cryptic-anchorage-24424.herokuapp.com']
 
 
 # Application definition
@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'Portfolio.urls'
@@ -116,8 +117,9 @@ USE_L10N = True
 USE_TZ = True
 
 
-STATIC_ROOT = os.getenv('STATIC_ROOT', default='staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -129,7 +131,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    "static",
+    os.path.join(BASE_DIR, 'static'),
 )
 
 
