@@ -25,7 +25,7 @@ SECRET_KEY = 'xxbqcqt_s1pax7#0$b2o7j4&$x6q@kas1#y!=y&hf-jqnpm+-3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = ['0.0.0.0', 'cryptic-anchorage-24424.herokuapp.com']
 
 
 # Application definition
