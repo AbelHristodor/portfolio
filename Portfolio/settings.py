@@ -116,7 +116,7 @@ USE_L10N = True
 USE_TZ = True
 
 
-STATIC_ROOT = os.getenv('STATIC_ROOT', default='Portfolio/static/')
+STATIC_ROOT = os.getenv('STATIC_ROOT', default='staticfiles')
 
 
 STATICFILES_FINDERS = (
