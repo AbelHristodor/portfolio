@@ -25,7 +25,7 @@ SECRET_KEY = 'xxbqcqt_s1pax7#0$b2o7j4&$x6q@kas1#y!=y&hf-jqnpm+-3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0']
 
 
 # Application definition
@@ -116,7 +116,7 @@ USE_L10N = True
 USE_TZ = True
 
 
-STATIC_ROOT = os.getenv('STATIC_ROOT', default='')
+STATIC_ROOT = os.getenv('STATIC_ROOT', default='Portfolio/static/')
 
 
 STATICFILES_FINDERS = (
