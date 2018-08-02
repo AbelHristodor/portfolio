@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="/static/bootstrap/bootstrap-4.0.0/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/bootstrap/bootstrap-4.0.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/layout_style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    {% block head %}{% endblock %}
+
+</head>
+<body>
+    <nav class="sticky-top">
+        <div class="navbar navbar-expand-md navbar-light bg-light">
+            <a class="navbar-brand ml-md-2" href="{% url "home-view" %}">Logo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto mr-md-2">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url "home-view" %}">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url "work-view" %}">Work</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'about-view' %}">About</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url "contact-view" %}">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+{% block body %}{% endblock %}
+
+<!-- Footer -->
+
+<footer>
+    <div class="container-fluid padding-low">
+        <div class="row text-center">
+            <div class="col-12">
+                <hr class="light">
+                <h5>Copyright &copy hristodorabel</h5>
+                <hr class="light">
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+{% block scripts %}{% endblock %}
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="/static/bootstrap/bootstrap-4.0.0/dist/js/bootstrap.js"></script>
+<script src="/static/js/portfolio-common.js"></script>
+</body>
+</html>
