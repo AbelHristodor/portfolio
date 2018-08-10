@@ -11,3 +11,7 @@ def work_view(request):
 
 def about_view(request):
     return render(request, "Portfolio/about.html", {})
+
+
+def apps_view(request):
+    return render(request, "Portfolio/apps.html", {})

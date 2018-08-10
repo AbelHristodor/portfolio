@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <style>
+    #taskBtn:hover{
+        background-color: lightgray;
+    }
+
+    </style>
+    <div class="container-fluid">
+            <div class="jumbotron bg-light text-dark text-center">
+                <div class="display-4">Todo App</div>
+                <div class="lead">Simple app that manages tasks.</div>
+                <div class="lead">To delete a task <strong>click it.</strong></div>
+            <br>
+            </div>
+        <div class="row">
+        <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <form method="post"> {% csrf_token %}
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Enter a task" id="task" name="task">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-dark ml-5 mr-2">Submit</button>
+                        </span>
+                    </div>
+                </form>
+
+                <ul class="list-group my-3">
+                    {% for task in tasks %}
+                    <a href="delete/{{ task.pk }}" style="text-decoration: none">
+                        <button type="submit" class="list-group-item list-group-item-action" id="taskBtn">{{ task.text }}</button>
+                    </a>
+                    <hr class="my-1">
+                    {% endfor %}
+                </ul>
+            </div>
+        <div class="col-md-3"></div>
+        </div>
+    </div>
+{% endblock %}

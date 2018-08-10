@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+<div class="container-fluid">
+    <div class="jumbotron bg-light text-dark">
+        <div class="display-4">Blog</div>
+        <div class="lead">Click on a blog to delete it</div>
+    </div>
+    <br>
+        {% if articles %}
+            <form method="POST">{% csrf_token %}
+                <div class="container">
+                    <ul class="list-group">
+                        {% for article in articles %}
+                            <input value="{{ article.title}}" type="submit" name="articleTitle">
+                            <hr class="my-1">
+                        {% endfor %}
+                    </ul>
+                </div>
+            </form>
+        {% else %}
+        <div class="container">
+            <div class="lead">There are no blogs available. Try writing some!</div>
+            <a href="{% url "BlogCreate"%}"><button class="btn btn-dark my-2 ml-3">Create</button></a>
+        </div>
+        {% endif %}
+
+</div>
+
+
+
+
+{% endblock %}

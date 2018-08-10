@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+        <div class="container-fluid">
+            <div class="jumbotron bg-light text-darkr">
+                <div class="display-4">Blog</div>
+                <div class="lead">Simple Blog</div>
+            </div>
+
+            <br/>
+            <br/>
+            <div class="input-group ">
+                <div class="lead">Want to create one?</div>
+                <span class="input-group-btn">
+                    <a href="{% url "BlogCreate" %}"><button class="btn btn-lg btn-dark ml-md-4 ">Create</button></a>
+                </span>
+            </div>
+            <br/>
+            <br/>
+            <hr>
+        </div>
+
+
+            <style>
+                #articleTitle:hover{
+                    text-decoration: underline;
+                }
+            </style>
+            {% for article in articles %}
+                <div class="container bg-secondary text-white py-md-2">
+                    <a href="/blog/content/{{ article.id }}" class="text-white" style="text-decoration: none">
+                        <h3 class="font-weight-bold text-white  pt-md-2 pr-md-2" id="articleTitle">{{article.title}}</h3>
+                        <div class="container">
+                            <h5 style="float:left" class="pr-md-1"><b class="font-weight-light">Author: {{article.author}}</b></h5>
+                            <h5 style="float:right" class="pr-md-1"><i class="font-weight-light">Published: {{article.published_date}}</i></h5>
+                        </div>
+                        <br/>
+                        <br/>
+                    </a>
+                        <div class="container mb-2" >
+                            <p id="content">
+                                {{article.text}}
+                                <a href="/blog/delete/{{ article.id }}"><button style="float:right" class="btn btn-sm ml-md-2 btn-dark mt-md-2">Delete article</button></a>
+                            </p>
+                        </div>
+                </div>
+                <br/>
+                <hr/>
+            {% endfor %}
+{% endblock %}

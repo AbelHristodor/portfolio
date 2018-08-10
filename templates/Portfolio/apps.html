@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+
+{% block head %}{% endblock %}
+
+
+{% block body %}
+<div class="container-fluid">
+    <h1 class="display-4">Apps</h1>
+    <hr  class="max">
+    <div class="row padding my-md-4">
+        <div class="col-md-4">
+            <h3>Available Apps : </h3>
+            <ul class="list-group">
+                <li class="list-group-item" ><a href="{% url "TodoHome" %}" class="page-link" style="text-decoration: none">Todo:</a>
+                    <p>A simple task-manager app. Simply write your task and when completed
+                        delete it!
+                    </p>
+                </li>
+                <li class="list-group-item" ><a href="{% url "BlogHome" %}" class="page-link" style="text-decoration: none">Blog:</a>
+                    <p>Have something to share with other people? This is the right place! Write anything you want!
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
