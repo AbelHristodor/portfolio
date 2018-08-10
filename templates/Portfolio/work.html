@@ -1,1 +1,100 @@
 {% extends "layout.html" %}
+
+{% block head %}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.2.0/ekko-lightbox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/work_style.css">
+{% endblock %}
+
+
+{% block body %}
+    <div class="bg"></div>
+    <div class="container-fluid">
+        <div class="row padding">
+            <div class="col-lg-12 my-lg-4">
+              <h2>This is a Title</h2>
+                <p>Minima volutpat assumenda, magni pretium molestie, dolores atque libero sed! Imperdiet, magnis cubilia potenti aptent hic, primis dolores.
+                    Molestias autem imperdiet. Anim ut phasellus, nascetur similique? Sociis mauris proident lacus autem nemo cumque,
+                    tenetur fermentum rerum. Euismod sed, justo wisi.</p>
+            </div>
+            <div class="col-lg-12 my-lg-1">
+                <p>Minima volutpat assumenda, magni pretium molestie, dolores atque libero sed! Imperdiet,
+                    magnis cubilia potenti aptent hic, primis dolores.
+                    Molestias autem imperdiet. Anim ut phasellus, nascetur similique? Sociis mauris proident lacus autem nemo cumque,
+                    tenetur fermentum rerum. Euismod sed, justo wisi.</p>
+                <p>Sint nemo iusto sollicitudin, animi? Ullamcorper primis libero fugit eum sunt nonummy? Ullamco eiusmod condimentum unde, urna elementum,
+                    faucibus error cupidatat hendrerit minim? Dignissim ridiculus? </p>
+            </div>
+        </div>
+
+    </div>
+
+<!-- Img Section -->
+
+    <div class="container-fluid padding">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card my-2">
+                    <a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox" data-gallery="gallery">
+                        <img class="card-img" src="https://unsplash.it/600.jpg?image=251" alt="img1">
+                    </a>
+                    <div class="middle">
+                        <div class="card-text-hover">
+                            This is a dog.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card my-2">
+                    <a href="https://unsplash.it/1200/768.jpg?image=252" data-toggle="lightbox" data-gallery="gallery">
+                        <img class="card-img" src="https://unsplash.it/600.jpg?image=252" alt="img2">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card my-2">
+                    <a href="https://unsplash.it/1200/768.jpg?image=253" data-toggle="lightbox" data-gallery="gallery">
+                        <img class="card-img" src="https://unsplash.it/600.jpg?image=253" alt="img3">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card my-2">
+                    <a href="https://unsplash.it/1200/768.jpg?image=254" data-toggle="lightbox" data-gallery="gallery">
+                        <img class="card-img" src="https://unsplash.it/600.jpg?image=254" alt="img1">
+                    </a>
+                    <div class="middle">
+                        <div class="card-text-hover">
+                            This is a dog.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card my-2">
+                    <a href="https://unsplash.it/1200/768.jpg?image=255" data-toggle="lightbox" data-gallery="gallery">
+                        <img class="card-img" src="https://unsplash.it/600.jpg?image=255" alt="img2">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card my-2">
+                    <a href="https://unsplash.it/1200/768.jpg?image=256" data-toggle="lightbox" data-gallery="gallery">
+                        <img class="card-img" src="https://unsplash.it/600.jpg?image=256" alt="img3">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block scripts %}
+    <script>
+    $(document).on("click", '[data-toggle="lightbox"]', function(event) {
+      event.preventDefault();
+      $(this).ekkoLightbox();
+    });
+    </script>
+{% endblock %}

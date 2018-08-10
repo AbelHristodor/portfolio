@@ -1,0 +1,33 @@
+.bg {
+    background:url("/static/img/work/work_bg3.jpg") no-repeat center;
+    height: 80%;
+    background-size: cover;
+}
+.card img{
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.card-text-hover {
+    color: #CCCCCC;
+    font-size: 16px;
+    padding: 16px 32px;
+}
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.card:hover .card-img {
+    opacity: 0.3;
+}
+
+.card:hover .middle {
+    opacity: 1;
+}
