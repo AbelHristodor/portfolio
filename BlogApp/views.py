@@ -9,7 +9,7 @@ from django.utils import timezone
 
 def get_all_articles(request):
     context = dict()
-    context['articles'] = Article.objects.all()
+    context['articles'] = Article.objects.all().order_by("published_date").reverse()
     return context
 
 
@@ -25,20 +25,13 @@ def blog_home(request):
     if request.method == 'GET':
         context = get_all_articles(request)
         return render(request, "Blog/blogHome.html", context)
-
-
-def blog_create(request):
-    if request.method == 'GET':
-        context = get_all_articles(request)
-        return render(request, "Blog/blogCreate.html", context)
-
     elif request.method == 'POST':
         article_title = request.POST['title']
         article_text = request.POST['text']
         article_author = request.POST['author']
         article = Article.objects.create(title=article_title, text=article_text, author=article_author)
         article.save()
-        return redirect("/blog/home")
+        return redirect("BlogHome")
 
 
 def blog_content(request, article_id):
