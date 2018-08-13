@@ -1,0 +1,34 @@
+{% extends "layout.html" %} {% block head %}{% endblock %} {% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="jumbotron text-center bg-white">
+                <div class="display-4">Register</div>
+                <div class="display-5">Please register to access the content of this site.</div>
+            </div>
+            <form method="post">{% csrf_token %}
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" placeholder="Enter your username"name="username">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" placeholder="Enter your email" name="email">
+                    <small class="form-text text-muted">We'll never share your email with anyone</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" placeholder="Enter your Password" name="password">
+                </div>
+                <br>
+                <button type="submit" class="btn btn-outline-secondary my-md-3">Submit</button>
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+
+
+{% endblock %} {% block scripts %}{% endblock %}

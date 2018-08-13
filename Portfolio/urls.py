@@ -22,8 +22,9 @@ urlpatterns = [
     path('', views.home_view, name="home-view"),
     path('work', views.work_view, name="work-view"),
     path('about', views.about_view, name="about-view"),
+    path('apps/', views.apps_view, name="apps-view"),
     path('contact/', include("EmailApp.urls")),
     path('todo/', include("TodoApp.urls")),
-    path('apps/', views.apps_view, name="apps-view"),
-    path('blog/', include("BlogApp.urls"))
+    path('blog/', include("BlogApp.urls")),
+    path('auth/', include("authentication.urls"))
 ]

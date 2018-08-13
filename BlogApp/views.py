@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Article
-from django.utils import timezone
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -20,7 +20,7 @@ def get_article(request, article_id):
 
 # Real requests handlers
 
-
+@login_required
 def blog_home(request):
     if request.method == 'GET':
         context = get_all_articles(request)
@@ -33,13 +33,13 @@ def blog_home(request):
         article.save()
         return redirect("BlogHome")
 
-
+@login_required
 def blog_content(request, article_id):
     if request.method == 'GET':
         context = get_article(request, article_id=article_id)
         return render(request, "Blog/blogContent.html", context)
 
-
+@login_required
 def blog_delete(request, article_id):
     if request.method == 'GET':
         Article.objects.get(pk=article_id).delete()

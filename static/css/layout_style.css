@@ -137,6 +137,9 @@ footer a{
         font-size: 2.5em;
         padding: 1.2rem
     }
+    .jumbotron .lead{
+        font-size: 1em;
+    }
 }
 @media (max-width: 576px) {
     .carousel-caption {
@@ -168,5 +171,8 @@ footer a{
     .social a{
         font-size: 2em;
         padding: .7rem
+    }
+    .jumbotron .lead{
+        font-size: 1em;
     }
 }
