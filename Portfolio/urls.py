@@ -26,5 +26,6 @@ urlpatterns = [
     path('contact/', include("EmailApp.urls")),
     path('todo/', include("TodoApp.urls")),
     path('blog/', include("BlogApp.urls")),
-    path('auth/', include("authentication.urls"))
+    path('auth/', include("authentication.urls")),
+    path('api/', include("api.urls")),
 ]

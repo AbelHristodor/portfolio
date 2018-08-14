@@ -9,7 +9,7 @@
     </style>
     <div class="container-fluid">
             <div class="jumbotron bg-light text-dark text-center">
-                <div class="display-4">Todo App</div>
+                <div class="display-4" id="title">Todo App</div>
                 <div class="lead">Simple app that manages tasks.</div>
                 <div class="lead">To delete a task <strong>click it.</strong></div>
             <br>
@@ -17,7 +17,7 @@
         <div class="row">
         <div class="col-md-3"></div>
             <div class="col-md-6">
-                <form method="post"> {% csrf_token %}
+                <form method="post" id="todoForm"> {% csrf_token %}
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Enter a task" id="task" name="task">
                         <span class="input-group-btn">
@@ -26,16 +26,15 @@
                     </div>
                 </form>
 
-                <ul class="list-group my-3">
-                    {% for task in tasks %}
-                    <a href="delete/{{ task.pk }}" style="text-decoration: none">
-                        <button type="submit" class="list-group-item list-group-item-action" id="taskBtn">{{ task.text }}</button>
-                    </a>
-                    <hr class="my-1">
-                    {% endfor %}
+                <ul class="list-group my-3" id="taks-list">
                 </ul>
             </div>
         <div class="col-md-3"></div>
         </div>
     </div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/plugins/cookie_plugin.js"></script>
+<script src="/static/js/todo-common.js"></script>
 {% endblock %}

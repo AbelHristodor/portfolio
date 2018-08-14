@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'TodoApp',
     'BlogApp',
     'authentication',
+    'api',
 ]
 
 MIDDLEWARE = [
