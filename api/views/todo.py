@@ -13,7 +13,7 @@ success_response = {"success": True}
 @login_required
 def get_all(request):
     if request.is_ajax():
-        tasks = TodoItem.objects.all()
+        tasks = TodoItem.objects.all().reverse()
         data = serializers.serialize('json', tasks)
         return HttpResponse(data, content_type="application/json")
         
