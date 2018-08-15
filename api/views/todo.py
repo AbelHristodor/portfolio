@@ -10,19 +10,22 @@ import json
 
 success_response = {"success": True}
 
+
 @login_required
 def get_all(request):
     if request.is_ajax():
         tasks = TodoItem.objects.all().reverse()
         data = serializers.serialize('json', tasks)
         return HttpResponse(data, content_type="application/json")
-        
+
+
 @login_required
 def add_todo(request):
     if request.method == "POST":
         form = TodoItemForm(request.POST)
         form.save()
         return HttpResponse(json.dumps(success_response), content_type="application/json")
+
 
 @login_required
 def delete_todo(request):

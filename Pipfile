@@ -9,6 +9,8 @@ pytz = "*"
 pip = "*"
 gunicorn = "*"
 whitenoise = "*"
+Faker = "*"
+factory-boy = "*"
 
 [requires]
 python_version = "3.6.5"
