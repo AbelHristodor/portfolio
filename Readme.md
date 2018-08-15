@@ -6,7 +6,8 @@ Used Bootstrap 4 for styling as well as CSS3.
 Contains some web apps:
 - Blog
 - Todo
-
+- Email sending app (not configured)
+- Authentication 
 
 This is just a template
 
