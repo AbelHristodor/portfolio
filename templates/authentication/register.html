@@ -3,6 +3,13 @@
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
+            {% if msg %}
+            <div class="alert alert-danger" role="alert">
+                <i class="fa fa-exclamation-circle fa-fw" aria-hidden="true"></i>
+                <span class="sr-only">Error:</span>
+                {{ msg }}
+            </div>
+            {% endif %}
             <div class="jumbotron text-center bg-white">
                 <div class="display-4">Register</div>
                 <div class="display-5">Please register to access the content of this site.</div>
@@ -10,7 +17,7 @@
             <form method="post">{% csrf_token %}
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input type="text" class="form-control" placeholder="Enter your username"name="username">
+                    <input type="text" class="form-control" placeholder="Enter your username" name="username">
                 </div>
                 <div class="form-group">
                     <label for="email">Email address</label>

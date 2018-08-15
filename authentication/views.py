@@ -13,16 +13,21 @@ def register_page(request):
         username = request.POST['username']
         email = request.POST['email']
         password = request.POST['password']
-        user = User.objects.create_user(
-            username=username, email=email, password=password)
-        user.save()
-        auth_user = authenticate(username=username, password=password)
-        if user is not None:
-            if user.is_active:
-                login(request, auth_user)
+        if User.objects.get(username=username) is not None :
+            return render(request, "authentication/register.html", {"msg": "Username already in use"})
+        elif User.objects.get(email=email) is not None:
+            return render(request, "authentication/register.html", {"msg": "Email already in use"})
         else:
-            redirect("register-page")
-        return redirect("home-view")
+            user = User.objects.create_user(
+                username=username, email=email, password=password)
+            user.save()
+            auth_user = authenticate(username=username, password=password)
+            if auth_user is not None:
+                if auth_user.is_active:
+                    login(request, auth_user)
+            else:
+                redirect("register-page")
+            return redirect("home-view")
 
 def login_page(request):
     if request.method == "GET":
@@ -34,7 +39,7 @@ def login_page(request):
                 login(request, user)
             return redirect('home-view')
         else: 
-            return redirect('register-page')
+            return render(request, "authentication/login.html", {"msg": "Invalid credentials"})
     
 @login_required
 def logout_page(request):
