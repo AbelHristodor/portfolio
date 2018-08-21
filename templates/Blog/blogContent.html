@@ -1,23 +1,27 @@
-{% extends "layout.html" %}
-
-{% block body %}
+{% extends "layout.html" %} {% block body %}
 <div class="container-fluid">
-    <div class="jumbotron bg-light text-dark">
-        <br/>
-        <h3 class="display-4">{{article.title}}</h3>
+  <div class="jumbotron bg-light text-dark">
+    <br/>
+    <h3 class="display-4">{{article.title}}</h3>
 
+    <h5 style="float:left">
+      <b class="font-weight-light">Author: {{article.author}}</b>
+    </h5>
+    <h5 style="float:right">
+      <i class="font-weight-light">Published: {{article.published_date}}</i>
+    </h5>
+  </div>
 
-  <h5 style="float:left"><b class="font-weight-light">Author: {{article.author}}</b></h5>
-  <h5 style="float:right"><i class="font-weight-light">Published: {{article.published_date}}</i></h5>
-</div>
+  <div>
+    <p class="p-md-2">{{article.text}}</p>
+  </div>
 
-<div>
-  <p class="p-md-2">{{article.text}}</p>
-</div>
-
-<br/>
-<hr>
-<a href="{% url "BlogHome" %}"> <button type="button" class="btn btn-info btn-dark my-4"> << Back</button></a>
+  <br/>
+  <hr>
+  <a href="{% url 'BlogHome' %}">
+    <button type="button" class="btn btn-info btn-dark my-4">
+      << Back</button>
+  </a>
 </div>
 
 {% endblock %}

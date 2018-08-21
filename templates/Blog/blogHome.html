@@ -54,35 +54,7 @@
 </div>
 <!--- MODAL END -->
 <div class="articles"></div>
-<!-- 
 
-{% for article in articles %}
-<div class="row padding">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
-        <div class="card text-dark">
-            <div class="card-header">
-                <a id="articleHeader">
-                    <h3 class="card-title">{{article.title}}</h3>
-                    <h5 style="float:left">
-                        <b class="font-weight-light">Author: {{article.author}}</b>
-                    </h5>
-                    <h5 style="float:right">
-                        <i class="font-weight-light">Published: {{article.published_date}}</i>
-                    </h5>
-                </a>
-            </div>
-            <div class="card-body">
-                <p class="card-text"> {{article.text}}
-                    <button style="float:right" class="btn btn-sm btn-dark my-md-3">Delete article</button>
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3"></div>
-</div>
-{% endfor %} 
--->
 {% endblock %}
 {% block scripts %}
 <script src="/static/js/plugins/cookie_plugin.js"></script>

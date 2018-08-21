@@ -19,7 +19,7 @@ function getAllArticles() {
                         '<div class="col-md-6">' +
                         '<div class="card text-dark">' +
                         '<div class="card-header">' +
-                        '<a id="articleHeader">' +
+                        '<a id="articleHeader" href="/blog/content/'+ item['pk'] +'">' +
                         '<h3 class="card-title">' + item['fields']['title'] + '</h3>' +
                         '<h5 style="float:left">' +
                         '<b class="font-weight-light">Author: ' + item['fields']['author'] + '</b></h5>' +
