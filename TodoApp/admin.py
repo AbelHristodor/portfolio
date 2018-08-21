@@ -3,4 +3,4 @@ from TodoApp.models import TodoItem
 
 # Register your models here.
 
-admin.register(TodoItem)
+admin.site.register(TodoItem)
