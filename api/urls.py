@@ -9,4 +9,5 @@ urlpatterns = [
     path("blog/get/", blog.get_article, name="getBlog"),
     path("blog/add/", blog.add_blog, name="addBlog"),
     path("blog/delete/", blog.delete_blog, name="deleteBlog"),
+    path("blog/update/", blog.update_blog, name="updateBlog"),
 ]

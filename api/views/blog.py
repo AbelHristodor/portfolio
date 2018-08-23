@@ -41,3 +41,13 @@ def delete_blog(request):
         article = Article.objects.filter(pk=request.POST['id'])
         article.delete()
         return HttpResponse(json.dumps(success_response), content_type="application/json")
+
+
+@login_required
+def update_blog(request):
+    if request.method == "POST":
+        article = get_object_or_404(Article, id=request.POST['id'])
+        form = ArticleForm(request.POST or None, instance=article)
+        if form.is_valid():
+            form.save()
+            return HttpResponse(json.dumps(success_response), content_type="application/json")

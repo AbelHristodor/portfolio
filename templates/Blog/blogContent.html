@@ -1,4 +1,54 @@
 {% extends "layout.html" %} {% block body %}
+<style>
+  textarea {
+    white-space: pre-wrap;
+  }
+</style>
+
+<!-- MODAL -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editModalLabel">Edit blog post</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!--
+              {% if msg %}
+              <div class="alert alert-success" role="alert">
+                  <i class="fa fa-exclamation-circle fa-fw" aria-hidden="true"></i>
+                  <span class="sr-only">Blog post successfully updated.</span>
+              </div>
+              {% endif %}
+              -->
+        <form method="post" id="updateForm">{% csrf_token %}
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input class="form-control" name="title" id="title" type="text" placeholder="Title of the blog" value="{{article.title}}">
+          </div>
+          <div class="form-group">
+            <label for="author">Author</label>
+            <input class="form-control" name="author" id="author" type="text" placeholder="Author's name" value="{{article.author}}">
+          </div>
+          <div class="form-group">
+            <label for="text">Content</label>
+            <textarea class="form-control" name="text" id="text" type="text" rows="4" cols="50" placeholder="Content">{{article.text}}
+            </textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--- MODAL END -->
+
 <div class="container-fluid">
   <div class="jumbotron bg-light text-dark">
     <br/>
@@ -19,9 +69,15 @@
   <br/>
   <hr>
   <a href="{% url 'BlogHome' %}">
-    <button type="button" class="btn btn-info btn-dark my-4">
+    <button type="button" class="btn btn-md btn-dark m-4">
       << Back</button>
   </a>
+  <button class="btn btn-md btn-outline-secondary" data-toggle="modal" data-target="#editModal">Edit</button>
 </div>
 
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/plugins/cookie_plugin.js"></script>
+<script src="/static/js/blog-common.js"></script>
 {% endblock %}
