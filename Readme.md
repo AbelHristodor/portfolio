@@ -1,4 +1,3 @@
-#Django Portfolio Website
 Django - Bootstrap 4.0.0 Website
 
 This is a simple website made using Django.
