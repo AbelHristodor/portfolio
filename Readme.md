@@ -1,3 +1,4 @@
+#Django Portfolio Website
 Django - Bootstrap 4.0.0 Website
 
 This is a simple website made using Django.
@@ -9,6 +10,6 @@ Contains some web apps:
 - Email sending app (not configured)
 - Authentication 
 
-This is just a template
+This is just a template, mostly for learning purposes
 
 
